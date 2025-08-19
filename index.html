@@ -1,0 +1,1601 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pushpraj — Software Developer | AI/ML Specialist | Cloud Engineer</title>
+
+  <!-- Icons & Lottie & Particles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <meta name="description" content="Pushpraj — Software Developer specializing in AI/ML solutions, cloud computing, and networking. Creator of NEATNOTES.AI for dysgraphia support. Salesforce intern with AWS & Cisco certifications." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ---------------------------
+       Base Styles & Variables
+       --------------------------- */
+    :root {
+      /* Default Theme (Purple) */
+      --theme-name: 'purple';
+      --bg: #0a0e1a;
+      --card: #0f172a;
+      --glass: rgba(255,255,255,0.05);
+      --primary: #7c4dff;
+      --primary-light: #9a76ff;
+      --primary-dark: #5e35b1;
+      --accent: #00e5ff;
+      --accent-dark: #00bcd4;
+      --text: #f1f5f9;
+      --text-light: #e2e8f0;
+      --text-muted: #94a3b8;
+      --radius: 16px;
+      --radius-sm: 8px;
+      --shadow: 0 12px 30px rgba(2,6,23,0.7);
+      --shadow-sm: 0 4px 12px rgba(2,6,23,0.4);
+      --transition: 300ms cubic-bezier(0.16, 1, 0.3, 1);
+      --section-padding: 5rem 1.5rem;
+      --header-height: 80px;
+      --max-width: 1200px;
+    }
+    
+    /* Blue Theme */
+    [data-theme="blue"] {
+      --theme-name: 'blue';
+      --primary: #2962ff;
+      --primary-light: #448aff;
+      --primary-dark: #0039cb;
+      --accent: #00b8d4;
+      --accent-dark: #0088a3;
+    }
+    
+    /* Green Theme */
+    [data-theme="green"] {
+      --theme-name: 'green';
+      --primary: #00c853;
+      --primary-light: #5efc82;
+      --primary-dark: #009624;
+      --accent: #76ff03;
+      --accent-dark: #64dd17;
+    }
+    
+    /* Orange Theme */
+    [data-theme="orange"] {
+      --theme-name: 'orange';
+      --primary: #ff6d00;
+      --primary-light: #ff9100;
+      --primary-dark: #c43c00;
+      --accent: #ffab00;
+      --accent-dark: #ff8f00;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+    }
+    
+    html, body {
+      height: 100%;
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,77,255,0.08), transparent), var(--bg); 
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.6;
+      font-size: 1.05rem;
+      transition: background-color 500ms ease;
+    }
+    
+    h1, h2, h3, h4, h5 {
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--text-light);
+    }
+    
+    p {
+      margin-bottom: 1rem;
+    }
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    /* Typography */
+    .text-gradient {
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    /* Layout */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .section {
+      padding: var(--section-padding);
+      position: relative;
+    }
+    
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 70px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 2px;
+    }
+    
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin-bottom: 2rem;
+    }
+    
+    /* Header */
+    header.site-header {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      margin: 0 auto;
+      max-width: var(--max-width);
+      width: calc(100% - 40px);
+      z-index: 1200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 1.5rem;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 0 0 var(--radius) var(--radius);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    
+    header .brand {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    
+    header .brand-logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+    
+    header .brand h1 {
+      font-size: 1.2rem;
+      color: var(--text-light);
+      margin: 0;
+    }
+    
+    nav.main-nav {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+    }
+    
+    nav.main-nav a {
+      padding: 0.6rem 1rem;
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: var(--transition);
+      font-size: 0.9rem;
+    }
+    
+    nav.main-nav a:hover {
+      color: var(--text-light);
+      background: rgba(124,77,255,0.1);
+    }
+    
+    nav.main-nav a.active {
+      color: var(--primary);
+      background: rgba(124,77,255,0.1);
+    }
+    
+    /* Theme Switcher */
+    .theme-switcher {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--glass);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      margin-left: 0.5rem;
+    }
+    
+    .theme-switcher i {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+    }
+    
+    .theme-options {
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background: var(--card);
+      border-radius: var(--radius-sm);
+      padding: 0.5rem;
+      box-shadow: var(--shadow);
+      display: none;
+      flex-direction: column;
+      gap: 0.5rem;
+      z-index: 100;
+      width: 120px;
+    }
+    
+    .theme-options.show {
+      display: flex;
+      animation: fadeIn 200ms ease-out;
+    }
+    
+    .theme-option {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+    
+    .theme-option:hover {
+      background: rgba(255,255,255,0.05);
+    }
+    
+    .theme-color {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 2px solid var(--card);
+    }
+    
+    .theme-color.purple {
+      background: #7c4dff;
+    }
+    
+    .theme-color.blue {
+      background: #2962ff;
+    }
+    
+    .theme-color.green {
+      background: #00c853;
+    }
+    
+    .theme-color.orange {
+      background: #ff6d00;
+    }
+    
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: var(--header-height);
+      position: relative;
+    }
+    
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      width: 100%;
+    }
+    
+    .hero-intro h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--text-light);
+    }
+    
+    .role {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+    
+    .hero-bio {
+      color: var(--text-muted);
+      margin: 1.5rem 0;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+    
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: linear-gradient(90deg, var(--primary), var(--primary-light));
+      border: none;
+      padding: 0.9rem 1.8rem;
+      border-radius: var(--radius-sm);
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(124,77,255,0.2);
+      transition: var(--transition);
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(124,77,255,0.3);
+    }
+    
+    .btn.secondary {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text);
+      box-shadow: none;
+    }
+    
+    .btn.secondary:hover {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.15);
+    }
+    
+    .hero-contact {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      align-items: center;
+    }
+    
+    .hero-contact-item {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      color: var(--text-muted);
+    }
+    
+    .hero-contact-item i {
+      color: var(--primary);
+    }
+    
+    /* Avatar */
+    .hero-avatar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    
+    .avatar-wrap {
+      width: 380px;
+      height: 380px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.03);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .avatar-wrap::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        to bottom right,
+        transparent,
+        transparent,
+        transparent,
+        var(--primary)
+      );
+      transform: rotate(30deg);
+      animation: animate 6s linear infinite;
+      opacity: 0.5;
+    }
+    
+    .avatar-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 2px;
+      border-radius: calc(var(--radius) - 2px);
+      background: var(--card);
+    }
+    
+    /* Floating Tech Elements */
+    .floating-tech {
+      position: absolute;
+      z-index: -1;
+      opacity: 0.7;
+    }
+    
+    .floating-tech.python {
+      top: 15%;
+      left: 5%;
+      width: 80px;
+      animation: float 8s ease-in-out infinite;
+    }
+    
+    .floating-tech.tensorflow {
+      bottom: 20%;
+      right: 10%;
+      width: 100px;
+      animation: float 10s ease-in-out infinite 2s;
+    }
+    
+    .floating-tech.react {
+      top: 30%;
+      right: 8%;
+      width: 70px;
+      animation: float 7s ease-in-out infinite 1s;
+    }
+    
+    .floating-tech.aws {
+      bottom: 15%;
+      left: 8%;
+      width: 90px;
+      animation: float 9s ease-in-out infinite 1.5s;
+    }
+    
+    /* About Section */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    
+    .bio-card {
+      background: var(--card);
+      padding: 2rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .bio-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary), var(--accent));
+    }
+    
+    .bio-card h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+    }
+    
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .skill-category {
+      background: rgba(255,255,255,0.03);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      border-left: 3px solid var(--primary);
+      transition: var(--transition);
+    }
+    
+    .skill-category:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .skill-category h4 {
+      font-size: 0.9rem;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+    }
+    
+    .skill-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .skill-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    
+    .skill-item::before {
+      content: '▹';
+      color: var(--primary);
+    }
+    
+    /* Projects Section */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    
+    .project-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .project-card.featured {
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 30px rgba(0, 229, 255, 0.3);
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(2,6,23,0.8);
+    }
+    
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+    }
+    
+    .project-thumb {
+      height: 200px;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .project-meta h4 {
+      color: var(--text-light);
+      margin: 0;
+    }
+    
+    .project-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .tag {
+      background: rgba(124,77,255,0.1);
+      padding: 0.4rem 0.8rem;
+      border-radius: 50px;
+      color: var(--primary);
+      font-size: 0.8rem;
+    }
+    
+    .project-actions {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+    
+    /* Experience Section */
+    .timeline {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 7px;
+      width: 2px;
+      background: rgba(255,255,255,0.1);
+    }
+    
+    .timeline-item {
+      position: relative;
+      padding-bottom: 2rem;
+      padding-left: 1.5rem;
+      transition: var(--transition);
+    }
+    
+    .timeline-item:hover {
+      transform: translateX(5px);
+    }
+    
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.5rem;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 2px solid var(--card);
+    }
+    
+    .timeline-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.3rem;
+    }
+    
+    .timeline-title {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      margin-bottom: 0.3rem;
+    }
+    
+    .timeline-company {
+      font-size: 0.9rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .timeline-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    
+    /* Contact Section */
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    
+    .contact-panel {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .contact-panel::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary), var(--accent));
+    }
+    
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      transition: var(--transition);
+    }
+    
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(124,77,255,0.2);
+    }
+    
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    /* Footer */
+    footer {
+      padding: 3rem 1.5rem;
+      text-align: center;
+      position: relative;
+    }
+    
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(124,77,255,0.5), transparent);
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .social-link {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+    
+    .social-link:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-3px);
+    }
+    
+    /* Back to top */
+    #backToTop {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      z-index: 1000;
+    }
+    
+    #backToTop:hover {
+      transform: translateY(-3px) scale(1.1);
+    }
+    
+    /* Particles container */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes animate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero-inner,
+      .about-grid,
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero-avatar {
+        order: -1;
+        margin-bottom: 2rem;
+      }
+      
+      .avatar-wrap {
+        width: 300px;
+        height: 300px;
+      }
+      
+      .floating-tech {
+        display: none;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      :root {
+        --section-padding: 3rem 1.5rem;
+      }
+      
+      .hero-intro h2 {
+        font-size: 2.2rem;
+      }
+      
+      header.site-header {
+        width: 100%;
+        border-radius: 0;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero-cta {
+        flex-direction: column;
+      }
+      
+      .hero-contact {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .avatar-wrap {
+        width: 260px;
+        height: 260px;
+      }
+      
+      nav.main-nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
+
+  <!-- Floating Tech Elements -->
+  <div class="floating-tech python">
+    <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_2znxgjyt.json" background="transparent" speed="1" loop autoplay></lottie-player>
+  </div>
+  <div class="floating-tech tensorflow">
+    <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_dsn7np1q.json" background="transparent" speed="1" loop autoplay></lottie-player>
+  </div>
+  <div class="floating-tech react">
+    <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_uk4b9h2x.json" background="transparent" speed="1" loop autoplay></lottie-player>
+  </div>
+  <div class="floating-tech aws">
+    <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_akuxjzbr.json" background="transparent" speed="1" loop autoplay></lottie-player>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand-logo">P</div>
+      <div>
+        <h1>Pushpraj</h1>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+      
+      <div class="theme-switcher" id="themeSwitcher">
+        <i class="fas fa-palette"></i>
+        <div class="theme-options" id="themeOptions">
+          <div class="theme-option" data-theme="purple">
+            <span class="theme-color purple"></span>
+            Purple
+          </div>
+          <div class="theme-option" data-theme="blue">
+            <span class="theme-color blue"></span>
+            Blue
+          </div>
+          <div class="theme-option" data-theme="green">
+            <span class="theme-color green"></span>
+            Green
+          </div>
+          <div class="theme-option" data-theme="orange">
+            <span class="theme-color orange"></span>
+            Orange
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section id="home" class="hero section">
+      <div class="hero-inner">
+        <div class="hero-intro">
+          <h2>Hi, I'm <span class="text-gradient">Pushpraj</span></h2>
+          <div class="role">Software Developer | AI/ML Enthusiast | Cloud Practitioner</div>
+          
+          <p class="hero-bio">
+            I specialize in building AI-powered solutions and scalable applications. Currently leading development of NEATNOTES.AI, 
+            an innovative handwriting recognition system for dysgraphia support. Passionate about solving real-world problems through technology.
+          </p>
+          
+          <div class="hero-cta">
+            <button class="btn" id="downloadCvBtn">
+              <i class="fas fa-download"></i> Download CV
+            </button>
+            <button class="btn secondary" id="contactMeBtn">
+              <i class="fas fa-paper-plane"></i> Contact Me
+            </button>
+          </div>
+          
+          <div class="hero-contact">
+            <a href="tel:+918076567464" class="hero-contact-item">
+              <i class="fas fa-phone"></i> +91 80765 67464
+            </a>
+            <a href="mailto:pushpraj1929@gmail.com" class="hero-contact-item">
+              <i class="fas fa-envelope"></i> pushpraj1929@gmail.com
+            </a>
+          </div>
+        </div>
+        
+        <div class="hero-avatar">
+          <div class="avatar-wrap">
+            <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_tfb3estd.json"
+              background="transparent" speed="1" loop autoplay style="width:100%;height:100%;z-index:2;position:relative">
+            </lottie-player>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">Results-driven and adaptable Software Developer with strong foundations in programming, AI/ML, cloud computing, and full-stack web development.</p>
+      
+      <div class="about-grid">
+        <div class="bio-card">
+          <h3>Professional Summary</h3>
+          <p>
+            Experienced in building scalable applications, integrating APIs, and deploying cloud-native solutions. 
+            Proficient in writing clean, maintainable code and solving real-world problems through academic projects, 
+            internships, and certifications.
+          </p>
+          
+          <h3 style="margin-top: 2rem;">Education</h3>
+          <p>
+            <strong>B.Tech in Information Technology</strong><br>
+            Amity University, Noida (2021 - 2025)<br>
+            CGPA: 7.0/10
+          </p>
+          
+          <h3 style="margin-top: 2rem;">Volunteer Experience</h3>
+          <p>
+            <strong>JAX NGO – Child Education Initiative</strong><br>
+            Led a 10-member team to organize teaching sessions. Distributed study materials & enhanced participation.
+            Increased community engagement by 30% through awareness drives.
+          </p>
+        </div>
+        
+        <div>
+          <h3>Technical Skills</h3>
+          <div class="skills-container">
+            <div class="skill-category">
+              <h4>AI/ML</h4>
+              <div class="skill-list">
+                <div class="skill-item">TensorFlow/Keras</div>
+                <div class="skill-item">PyTorch</div>
+                <div class="skill-item">OpenCV</div>
+                <div class="skill-item">Computer Vision</div>
+              </div>
+            </div>
+            
+            <div class="skill-category">
+              <h4>Programming</h4>
+              <div class="skill-list">
+                <div class="skill-item">Python</div>
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">C++</div>
+                <div class="skill-item">HTML/CSS</div>
+              </div>
+            </div>
+            
+            <div class="skill-category">
+              <h4>Web Development</h4>
+              <div class="skill-list">
+                <div class="skill-item">React.js</div>
+                <div class="skill-item">Node.js</div>
+                <div class="skill-item">REST APIs</div>
+                <div class="skill-item">Firebase</div>
+              </div>
+            </div>
+            
+            <div class="skill-category">
+              <h4>Cloud & DevOps</h4>
+              <div class="skill-list">
+                <div class="skill-item">AWS</div>
+                <div class="skill-item">Docker</div>
+                <div class="skill-item">CI/CD</div>
+                <div class="skill-item">Salesforce</div>
+              </div>
+            </div>
+            
+            <div class="skill-category">
+              <h4>Databases</h4>
+              <div class="skill-list">
+                <div class="skill-item">MySQL</div>
+                <div class="skill-item">MongoDB</div>
+                <div class="skill-item">Firebase</div>
+              </div>
+            </div>
+            
+            <div class="skill-category">
+              <h4>Tools</h4>
+              <div class="skill-list">
+                <div class="skill-item">Git/GitHub</div>
+                <div class="skill-item">Postman</div>
+                <div class="skill-item">VS Code</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-subtitle">A selection of my recent work showcasing my skills in AI/ML, web development, and cloud computing.</p>
+      
+      <div class="projects-grid">
+        <div class="project-card featured">
+          <div class="project-thumb">
+            <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_5tkzkblw.json"
+              background="transparent" speed="1" loop autoplay style="width:100%;height:100%">
+            </lottie-player>
+          </div>
+          <h4>NEATNOTES.AI</h4>
+          <p>AI-powered handwriting recognition for dysgraphia using CRNN models and OpenCV. Improved OCR accuracy for dysgraphia-affected handwriting by 15%.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">TensorFlow</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">MySQL</span>
+          </div>
+          <div class="project-actions">
+            <button class="btn" data-modal="neatnotes">Details</button>
+            <a href="https://github.com/Pushpraj29" class="btn secondary">Code</a>
+            <a href="#" class="btn secondary" style="background:var(--accent-dark);">
+              <i class="fas fa-eye"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-thumb">
+            <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_jcikwtux.json"
+              background="transparent" speed="1" loop autoplay style="width:100%;height:100%">
+            </lottie-player>
+          </div>
+          <h4>Weather Prediction</h4>
+          <p>Responsive weather app with OpenWeather API integration and parallax design. Optimized API calls to reduce load time by 20%.</p>
+          <div class="project-tags">
+            <span class="tag">JavaScript</span>
+            <span class="tag">API</span>
+            <span class="tag">HTML/CSS</span>
+          </div>
+          <div class="project-actions">
+            <button class="btn" data-modal="weather">Details</button>
+            <a href="#" class="btn secondary">Live Demo</a>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <div class="project-thumb">
+            <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_2cwDXD.json"
+              background="transparent" speed="1" loop autoplay style="width:100%;height:100%">
+            </lottie-player>
+          </div>
+          <h4>QR Code Generator</h4>
+          <p>Python application with Tkinter GUI to generate and scan QR codes. Features export functionality and error handling.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Tkinter</span>
+            <span class="tag">qrcode</span>
+          </div>
+          <div class="project-actions">
+            <button class="btn" data-modal="qrcode">Details</button>
+            <a href="https://github.com/Pushpraj29" class="btn secondary">Code</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+      <h2 class="section-title">Experience & Certifications</h2>
+      <p class="section-subtitle">My professional journey and credentials that validate my expertise.</p>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">May 2024 - Jul 2024</div>
+          <h3 class="timeline-title">Salesforce Developer Intern</h3>
+          <div class="timeline-company">Salesforce, Noida</div>
+          <p class="timeline-desc">
+            Developed custom apps using Apex, Visualforce, and Lightning Web Components. Automated workflows, triggers & approval processes.
+            Integrated external services & optimized data modeling. Conducted unit testing & deployments for production readiness.
+          </p>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">2023 - Present</div>
+          <h3 class="timeline-title">AI Project Lead</h3>
+          <div class="timeline-company">NEATNOTES.AI</div>
+          <p class="timeline-desc">
+            Designed & trained CRNN model using Python (TensorFlow, PyTorch) + OpenCV. Implemented SQL database to store handwriting samples.
+            Built responsive UI with real-time predictions & error correction. Improved OCR accuracy for dysgraphia-affected handwriting by 15%.
+          </p>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">2023 - 2024</div>
+          <h3 class="timeline-title">Cisco Certifications</h3>
+          <div class="timeline-company">CCNA, Routing & Switching</div>
+          <p class="timeline-desc">
+            Earned multiple Cisco certifications covering network fundamentals, routing protocols, switching technologies, and troubleshooting.
+          </p>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">2024</div>
+          <h3 class="timeline-title">AWS Cloud Practitioner</h3>
+          <div class="timeline-company">Amazon Web Services</div>
+          <p class="timeline-desc">
+            Certified in AWS cloud concepts, core services (EC2, S3, Lambda), security, architecture best practices, and pricing models.
+          </p>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-date">2023</div>
+          <h3 class="timeline-title">NPTEL Cloud Computing</h3>
+          <div class="timeline-company">IIT Madras</div>
+          <p class="timeline-desc">
+            Completed certification course covering cloud architecture, virtualization, storage, and security fundamentals.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-subtitle">Have a project in mind or want to discuss opportunities? Feel free to reach out!</p>
+      
+      <div class="contact-wrap">
+        <div class="contact-panel">
+          <h3>Contact Information</h3>
+          <p>
+            I'm currently open to new opportunities, collaborations, or just a friendly chat about technology.
+          </p>
+          <div style="margin-top: 1.5rem;">
+            <div class="hero-contact-item" style="margin-bottom: 1rem;">
+              <i class="fas fa-envelope"></i> pushpraj1929@gmail.com
+            </div>
+            <div class="hero-contact-item" style="margin-bottom: 1rem;">
+              <i class="fas fa-phone"></i> +91 80765 67464
+            </div>
+            <div class="hero-contact-item" style="margin-bottom: 1rem;">
+              <i class="fab fa-github"></i> github.com/Pushpraj29
+            </div>
+            <div class="hero-contact-item">
+              <i class="fab fa-linkedin"></i> linkedin.com/in/pushpraj-3a49b6292
+            </div>
+          </div>
+          
+          <div style="margin-top: 2rem;">
+            <h4>Availability</h4>
+            <p>Monday - Friday: 9am - 5pm</p>
+            <p>Response time: Within 24 hours</p>
+          </div>
+        </div>
+        
+        <!-- Updated Contact Form with Formspree -->
+        <form id="contactForm" class="contact-panel" action="https://formspree.io/f/xrblvnge" method="POST">
+          <h3>Send Message</h3>
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" name="_replyto" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" name="_subject" placeholder="What's this about?">
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea name="message" placeholder="Your message here..." required></textarea>
+          </div>
+          <input type="hidden" name="_next" value="https://yourportfolio.com/thank-you.html">
+          <button type="submit" class="btn" id="submitBtn">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="social-links">
+      <a href="https://github.com/Pushpraj29" class="social-link">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/pushpraj-3a49b6292" class="social-link">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="mailto:pushpraj1929@gmail.com" class="social-link">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="tel:+918076567464" class="social-link">
+        <i class="fas fa-phone"></i>
+      </a>
+    </div>
+    <p>© 2024 Pushpraj. All rights reserved.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">
+      Built with ❤️ using HTML, CSS & JavaScript
+    </p>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+<script>
+// Initialize Particles.js with theme-adaptive colors
+function initParticles() {
+  const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim();
+  
+  particlesJS('particles-js', {
+    particles: {
+      number: { 
+        value: 60, 
+        density: { 
+          enable: true, 
+          value_area: 800 
+        } 
+      },
+      color: { 
+        value: primaryColor 
+      },
+      shape: { 
+        type: 'circle' 
+      },
+      opacity: { 
+        value: 0.7, 
+        random: true 
+      },
+      size: { 
+        value: 3, 
+        random: true 
+      },
+      line_linked: { 
+        enable: true, 
+        distance: 150, 
+        color: primaryColor,
+        opacity: 0.2, 
+        width: 1 
+      },
+      move: { 
+        enable: true, 
+        speed: 1.5, 
+        direction: 'none', 
+        random: true, 
+        straight: false, 
+        out_mode: 'out' 
+      }
+    },
+    interactivity: {
+      detect_on: 'window',
+      events: {
+        onhover: { 
+          enable: true, 
+          mode: 'grab' 
+        },
+        onclick: { 
+          enable: true, 
+          mode: 'push' 
+        }
+      }
+    },
+    retina_detect: true
+  });
+}
+
+// Update particle colors without resetting
+function updateParticleColors() {
+  const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim();
+  
+  if (window.pJSDom && window.pJSDom.length > 0) {
+    const particles = window.pJSDom[0].pJS.particles;
+    
+    // Update particle color
+    particles.color.value = primaryColor;
+    
+    // Update line color
+    particles.line_linked.color = primaryColor;
+    
+    // Refresh particles
+    window.pJSDom[0].pJS.fn.particlesRefresh();
+  }
+}
+
+// Theme Switcher
+const themeSwitcher = document.getElementById('themeSwitcher');
+const themeOptions = document.getElementById('themeOptions');
+  
+themeSwitcher.addEventListener('click', function(e) {
+  e.stopPropagation();
+  themeOptions.classList.toggle('show');
+});
+  
+document.addEventListener('click', function() {
+  themeOptions.classList.remove('show');
+});
+  
+document.querySelectorAll('.theme-option').forEach(option => {
+  option.addEventListener('click', function() {
+    const theme = this.getAttribute('data-theme');
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('portfolio-theme', theme);
+    themeOptions.classList.remove('show');
+    
+    // Update particle colors smoothly
+    updateParticleColors();
+  });
+});
+
+// Load saved theme
+const savedTheme = localStorage.getItem('portfolio-theme') || 'purple';
+document.documentElement.setAttribute('data-theme', savedTheme);
+
+// Initialize particles on load
+document.addEventListener('DOMContentLoaded', function() {
+  initParticles();
+
+  // Smooth scrolling for navigation
+  document.querySelectorAll('nav.main-nav a:not(.theme-switcher)').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      if(this.getAttribute('href').startsWith('#')) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          
+          // Update active nav item
+          document.querySelectorAll('nav.main-nav a').forEach(link => {
+            link.classList.remove('active');
+          });
+          this.classList.add('active');
+        }
+      }
+    });
+  });
+
+  // Update active nav item on scroll
+  const sections = document.querySelectorAll('.section');
+  window.addEventListener('scroll', function() {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (pageYOffset >= (sectionTop - 100)) {
+        current = section.getAttribute('id');
+      }
+    });
+    
+    document.querySelectorAll('nav.main-nav a').forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+  // Back to top button
+  window.addEventListener('scroll', function() {
+    const backToTop = document.getElementById('backToTop');
+    if (window.pageYOffset > 300) {
+      backToTop.style.display = 'flex';
+    } else {
+      backToTop.style.display = 'none';
+    }
+  });
+
+  document.getElementById('backToTop').addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Contact button scroll
+  document.getElementById('contactMeBtn').addEventListener('click', function() {
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Download CV button
+  document.getElementById('downloadCvBtn').addEventListener('click', function() {
+    const link = document.createElement('a');
+    link.href = '#';
+    link.download = 'Pushpraj_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    setTimeout(() => {
+      alert('CV download would start in a real implementation. For now, please contact me directly for my resume.');
+    }, 500);
+  });
+
+  // Contact form submission
+  const contactForm = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  
+  contactForm.addEventListener('submit', function(e) {
+    // Formspree will handle the submission
+    // Show loading state
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    submitBtn.disabled = true;
+    
+    // Optional: You can add fetch API for better handling
+    // fetch(this.action, {
+    //   method: 'POST',
+    //   body: new FormData(this),
+    //   headers: {
+    //     'Accept': 'application/json'
+    //   }
+    // })
+    // .then(response => {
+    //   submitBtn.innerHTML = '<i class="fas fa-check"></i> Sent!';
+    //   setTimeout(() => {
+    //     submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+    //     submitBtn.disabled = false;
+    //   }, 3000);
+    //   this.reset();
+    // })
+    // .catch(error => {
+    //   submitBtn.innerHTML = '<i class="fas fa-exclamation-circle"></i> Error';
+    //   setTimeout(() => {
+    //     submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+    //     submitBtn.disabled = false;
+    //   }, 3000);
+    // });
+  });
+
+  // Project modal functionality
+  document.querySelectorAll('[data-modal]').forEach(button => {
+    button.addEventListener('click', function() {
+      const projectId = this.getAttribute('data-modal');
+      alert(`In a complete implementation, this would open a detailed modal about the ${projectId} project.`);
+    });
+  });
+
+  // Ensure Lottie animations load properly
+  const lottiePlayers = document.querySelectorAll('lottie-player');
+  lottiePlayers.forEach(player => {
+    player.addEventListener('error', () => {
+      console.log('Lottie animation failed to load');
+      player.style.display = 'none';
+      player.parentElement.style.background = 'rgba(0,0,0,0.1)';
+    });
+  });
+  
+  // Animate elements on scroll
+  const animateOnScroll = function() {
+    const elements = document.querySelectorAll('.skill-category, .project-card, .timeline-item');
+    
+    elements.forEach(element => {
+      const elementPosition = element.getBoundingClientRect().top;
+      const screenPosition = window.innerHeight / 1.2;
+      
+      if (elementPosition < screenPosition) {
+        element.style.opacity = '1';
+        element.style.transform = element.classList.contains('timeline-item') ? 'translateX(0)' : 'translateY(0)';
+      }
+    });
+  };
+  
+  // Initialize elements with hidden state
+  document.querySelectorAll('.skill-category, .project-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 500ms ease, transform 500ms ease';
+  });
+  
+  document.querySelectorAll('.timeline-item').forEach((el, index) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateX(-20px)';
+    el.style.transition = `opacity 500ms ease ${index * 100}ms, transform 500ms ease ${index * 100}ms`;
+  });
+  
+  // Run once on load
+  animateOnScroll();
+  
+  // Then on scroll
+  window.addEventListener('scroll', animateOnScroll);
+});
+</script>
+</body>
+</html>
