@@ -1,4 +1,3 @@
-Portfolio Website
 A clean, modern, and responsive portfolio website built with HTML, CSS, and JavaScript. Features a contact form powered by Formspree and is deployed on Netlify.
 
 🌐 Live Demo
